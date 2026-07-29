@@ -1,18 +1,14 @@
 void Floyd-Worshall() { // besd-0
         const int oo = 1e18;
         vector<vector<int>> dist(n, vector<int>(n, oo));
-
         for(int u = 0; u < n; u++) { 
             dist[u][u] = 0;
         }
-
         for(int i = 0; i < m; i++) { // take input directed graph
             int u, v, w;
             cin >> u >> v >> w;
             dist[u][v] = min(dist[u][v], w);
         }
-
-
         for(int k = 0; k < n; k++) { // all pairs shorts path 
             for(int u = 0; u < n; u++) {
                 for(int v = 0; v < n; v++) {
@@ -22,7 +18,6 @@ void Floyd-Worshall() { // besd-0
                 }
             }
         }
-
         for(int k = 0; k < n; k++) { // check negative cycle 
             if(dist[k][k] < 0) {
                 for(int u = 0; u < n; u++) {

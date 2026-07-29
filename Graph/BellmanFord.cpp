@@ -9,7 +9,6 @@ void BellmanFord(int src) { // O(N * M)
             }
         }
     }
-
     bool inf = false; // check neg cycle 
     for(auto [u, v, w] : edges) {
         if(dist[u] != oo && dist[u] + w < dist[v]) {

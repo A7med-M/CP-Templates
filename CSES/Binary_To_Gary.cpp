@@ -12,19 +12,14 @@
  * Time Complexity: O(2^n)
  * Space Complexity: O(1)
  */
-
 #include <iostream>
-
 using namespace std;
-
 int main() {
     ios_base::sync_with_stdio(false); cin.tie(NULL);
-
     int n;
     cin >> n;
     // total_rows = 2^n computed using bitwise left shift
     int total_rows = 1 << n; 
-
     // Iterate through all decimal indices from 0 to (2^n - 1)
     for (int i = 0; i < total_rows; i++) {
         // Apply the Bitwise Formula: i XOR (i Right Shift 1)
@@ -35,6 +30,5 @@ int main() {
         }
         cout << "\n";
     }
-
     return 0;
 }
